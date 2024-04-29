@@ -43,6 +43,7 @@ public class App {
             String answer = sc.next();
             if (answer.equals("exit")) {
                 A = false;
+
             }
 
         }
