@@ -7,8 +7,12 @@ public class App {
         Scanner sc = new Scanner(System.in);
         int result = 0;
         boolean A = true;
+        int[] arr = new int[10];
+        int lastIndex = arr.length - 1;
+        int count = 0;
 
-        while (A) {
+        for (int i = 0; i < arr.length; i++) {
+
             System.out.print("첫 번째 숫자를 입력하세요: ");
             int num1 = sc.nextInt();
             System.out.print("두 번째 숫자를 입력하세요:");
@@ -38,15 +42,20 @@ public class App {
 
             }
             System.out.println("결과:" + result);
+            arr[i] = result;
+            count++;
 
-            System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
-            String answer = sc.next();
-            if (answer.equals("exit")) {
-                A = false;
-
-            }
+//            System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
+//            String answer = sc.next();
+//            if (answer.equals("exit")) {
+//                break;
+//            }
 
         }
+        for (int i = 0; i < count; i++) {
+            System.out.print(arr[i] + " ");
+        }
+
 
     }
 
