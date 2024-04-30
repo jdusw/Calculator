@@ -2,16 +2,18 @@ package calculator;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class App {
 
     public static void main(String[] args) {
 
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+
         boolean exit = false;
         Scanner sc = new Scanner(System.in);
         int count = 0;
         int result = 0;
-        int[] arr = new int[3];
 
         while (!exit) {
 
@@ -19,12 +21,8 @@ public class App {
             int num1 = sc.nextInt();
             System.out.print("두 번째 숫자를 입력하세요:");
             int num2 = sc.nextInt();
-            System.out.print("사칙연산 기호를 입력하거나 exit를 작성하세요 (exit입력시 종료): ");
-            String answer = sc.next();
-            if (answer.equals("exit")) {
-                exit = true;
-            }
-            char sa = answer.charAt(0);
+            System.out.print("사칙연산 기호를 입력하세요 : ");
+            Character sa = sc.next().charAt(0);
 
             switch (sa) {
                 case '+': {
@@ -49,12 +47,19 @@ public class App {
 
             System.out.println("결과:" + result);
 
-            arr[count++] = result;
+            arr.add(result);
+            System.out.println(arr.toString());
 
-            if (count > 10) {
-                for (int i = 0; i < 9; i++) {
-                   arr[i] = arr[i+1];
-                }
+            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
+            String remove = sc.next();
+            if(remove.equals("remove")) {
+                arr.remove(0);
+            }
+
+            System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
+            String answer = sc.next();
+            if (answer.equals("exit")) {
+                exit = true;
             }
 
         }
