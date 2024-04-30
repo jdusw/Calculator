@@ -5,24 +5,25 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args) {
-        int maxNum = 10;
+        int maxNum = 2;
         boolean exit = false;
-        int[] arr = new int[maxNum];
         Scanner sc = new Scanner(System.in);
         int count = 0;
         int result = 0;
+        int[] arr = new int[maxNum];
 
         while (!exit) {
-
 
             System.out.print("첫 번째 숫자를 입력하세요: ");
             int num1 = sc.nextInt();
             System.out.print("두 번째 숫자를 입력하세요:");
             int num2 = sc.nextInt();
-            System.out.print("사칙연산 기호를 입력하세요 ");
-            Character sa=sc.next().charAt(0);
-
-
+            System.out.print("사칙연산 기호를 입력하거나 exit를 작성하세요 (exit입력시 종료): ");
+            String answer = sc.next();
+            if (answer.equals("exit")) {
+                exit = true;
+            }
+            char sa = answer.charAt(0);
 
             switch (sa) {
                 case '+': {
@@ -47,30 +48,13 @@ public class App {
 
             System.out.println("결과:" + result);
 
-            System.out.print("exit 입력 시 종료됩니다: ");
-            String anwer = sc.next();
-            if (anwer.equals("exit")) {
-                exit = true;
-                break;
-            }
-
-            if (count < maxNum) {
-                arr[count] = result;
-                count++;
-            }else{
-                System.out.println("저장 가능 갯수를 초과했습니다");
-            }
-        }
-
-
-
-        for (int i = 0; i < count; i++) {
-            System.out.print(arr[i] + " ");
-        }
+            arr[count++] = result;
 
         }
 
         }
+        }
+
 
 
 
