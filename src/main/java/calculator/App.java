@@ -1,16 +1,17 @@
 package calculator;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
-        int maxNum = 2;
+
         boolean exit = false;
         Scanner sc = new Scanner(System.in);
         int count = 0;
         int result = 0;
-        int[] arr = new int[maxNum];
+        int[] arr = new int[3];
 
         while (!exit) {
 
@@ -50,10 +51,16 @@ public class App {
 
             arr[count++] = result;
 
-        }
+            if (count > 10) {
+                for (int i = 0; i < 9; i++) {
+                   arr[i] = arr[i+1];
+                }
+            }
 
         }
-        }
+
+    }}
+
 
 
 
