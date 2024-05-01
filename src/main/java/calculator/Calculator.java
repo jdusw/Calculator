@@ -2,6 +2,8 @@ package calculator;
 
 public class Calculator {
 
+    double result;
+
     public double calculate(int firstNumber, int secondNumber, Character operator) throws ArithmeticException {
 
         if (operator != '+' && operator != '-' && operator != '*' && operator != '/') {

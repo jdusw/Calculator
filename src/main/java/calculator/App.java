@@ -8,14 +8,14 @@ public class App {
 
     public static void main(String[] args) throws ArithmeticException{
 
-        ArrayList<Integer> arr = new ArrayList<Integer>();
+        ArrayList<Double> arr = new ArrayList<Double>();
 
-        //Calculator calc = new Calculator();
+        Calculator calc = new Calculator();
+
 
         boolean exit = false;
         Scanner sc = new Scanner(System.in);
         int count = 0;
-        int result = 0;
 
         while (!exit) {
 
@@ -25,6 +25,8 @@ public class App {
             int num2 = sc.nextInt();
             System.out.print("사칙연산 기호를 입력하세요: ");
             Character sa = sc.next().charAt(0) ;
+
+            double result = calc.calculate(num1, num2, sa);
 
 //            switch (sa) {
 //                case '+': {
@@ -47,6 +49,7 @@ public class App {
 //                }
 //            }
 
+
             System.out.println("결과:" + result);
 
             arr.add(result);
@@ -60,7 +63,7 @@ public class App {
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             String inquiry = sc.next();
             if(inquiry.equals("inquiry")) {
-                for(int a : arr ){
+                for(double a : arr ){
                     System.out.print(a + " ");
                 }
                 System.out.println();
