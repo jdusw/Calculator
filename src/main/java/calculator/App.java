@@ -6,9 +6,11 @@ import java.util.ArrayList;
 
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ArithmeticException{
 
         ArrayList<Integer> arr = new ArrayList<Integer>();
+
+        //Calculator calc = new Calculator();
 
         boolean exit = false;
         Scanner sc = new Scanner(System.in);
@@ -24,26 +26,26 @@ public class App {
             System.out.print("사칙연산 기호를 입력하세요 : ");
             Character sa = sc.next().charAt(0);
 
-            switch (sa) {
-                case '+': {
-                    result = num1 + num2;
-                    break;
-                }
-                case '-': {
-                    result = num1 - num2;
-                    break;
-                }
-                case '*': {
-                    result = num1 * num2;
-                    break;
-                }
-                case '/': {
-                    if (num2 != 0) {
-                        result = num1 / num2;
-                        break;
-                    }
-                }
-            }
+//            switch (sa) {
+//                case '+': {
+//                    result = num1 + num2;
+//                    break;
+//                }
+//                case '-': {
+//                    result = num1 - num2;
+//                    break;
+//                }
+//                case '*': {
+//                    result = num1 * num2;
+//                    break;
+//                }
+//                case '/': {
+//                    if (num2 != 0) {
+//                        result = num1 / num2;
+//                        break;
+//                    }
+//                }
+//            }
 
             System.out.println("결과:" + result);
 
