@@ -15,7 +15,6 @@ public class App {
 
         boolean exit = false;
         Scanner sc = new Scanner(System.in);
-        int count = 0;
 
         while (!exit) {
 
@@ -26,7 +25,7 @@ public class App {
             System.out.print("사칙연산 기호를 입력하세요: ");
             Character sa = sc.next().charAt(0) ;
 
-            double result = calc.calculate(num1, num2, sa);
+             calc.calculate(num1, num2, sa);
 
 //            switch (sa) {
 //                case '+': {
@@ -50,9 +49,9 @@ public class App {
 //            }
 
 
-            System.out.println("결과:" + result);
+            System.out.println("결과:" + calc.getResult());
 
-            arr.add(result);
+            arr.add(calc.getResult());
 
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
             String remove = sc.next();
