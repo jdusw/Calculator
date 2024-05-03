@@ -8,13 +8,6 @@ public class Calculator {
     Scanner sc = new Scanner(System.in);
     private ArrayList<Integer> arr = new ArrayList<>();
 
-    public ArrayList<Integer> getArr() {
-        return arr;
-    }
-
-    public void setArr(ArrayList<Integer> arr) {
-        this.arr = arr;
-    }
 
     public int calculate(int num1, int num2, Character operator) {
 
@@ -48,6 +41,16 @@ public class Calculator {
         }
         return result;
 
+    }
+    public ArrayList<Integer> getArr() {
+        return arr;
+    }
+
+    public void setArr(ArrayList<Integer> arr) {
+        this.arr = arr;
+    }
+    public void removeResult(int index) {
+        this.arr.remove(index);
     }
 
 
