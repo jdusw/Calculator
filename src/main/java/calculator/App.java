@@ -8,7 +8,8 @@ public class App {
 
     public static void main(String[] args) {
 
-        Calculator calc = new Calculator(new ArrayList<>(), new ArrayList<>());
+        ArithmeticCalulator arthCalculator = new ArithmeticCalulator(new ArrayList<>());
+        CircleCalculator circleCalculator = new CircleCalculator(new ArrayList<>());
         Scanner sc = new Scanner(System.in);
 
         boolean exit = false;
@@ -26,33 +27,33 @@ public class App {
                 System.out.print("사칙연산 기호를 입력하세요: ");
                 Character sa = sc.next().charAt(0);
 
-                int result = calc.calculate(num1, num2, sa);
+                double result = arthCalculator.calculate(num1, num2, sa);
 
-                calc.getArr().add(result);
+                arthCalculator.getArr().add(result);
 
 
                 System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
                 String remove = sc.next();
                 if (remove.equals("remove")) {
-                    calc.removeResult(0);
+                    arthCalculator.removeResult(0);
                 }
 
                 System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
                 String inquiry = sc.next();
                 if (inquiry.equals("inquiry")) {
-                    calc.inquiryResults();
+                    arthCalculator.inquiryResults();
                 }
             }else{
                 System.out.println("원의 반지름을 입력하세요");
                 int redius = sc.nextInt();
 
-                double area = calc.calculateCircleArea(redius);
-                calc.getCrcleResult().add(area);
+                double area = circleCalculator.calculate(redius);
+                circleCalculator.getArr().add(area);
 
                 System.out.println("반지름 = " + redius + "인 원의 넓이는 " + area);
 
                 System.out.println("저장된 원의 넓이 전체 조회 : ");
-                calc.inquiryCircleResult();
+                circleCalculator.inquiryResults();
             }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
