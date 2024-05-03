@@ -1,39 +1,47 @@
 package calculator;
 
+import javax.naming.OperationNotSupportedException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Calculator {
+    Scanner sc = new Scanner(System.in);
+    ArrayList<Integer> arr = new ArrayList<>();
 
-    private double result;
+    public double calculate(int num1, int num2, Character operator) {
+
+        int result = 0;
 
 
-    public double calculate(int firstNumber, int secondNumber, Character operator) throws ArithmeticException {
-        setResult(result);
-
-
-        if (operator != '+' && operator != '-' && operator != '*' && operator != '/') {
-            throw new ArithmeticException("올바른 연산자를 입력해주세요");
-        }
-
-        if (operator == '+') {
-            result = firstNumber + secondNumber;
-        }else if (operator == '-') {
-            result = firstNumber - secondNumber;
-        }else if (operator == '*') {
-            result = firstNumber * secondNumber;
-        }else if (operator == '/') {
-            result = firstNumber / secondNumber;
-            if(secondNumber==0){
-                throw new ArithmeticException("잘못입력된 값입니다");
+        switch (operator) {
+            case '+': {
+                result = num1 + num2;
+                break;
             }
+            case '-': {
+                result = num1 - num2;
+                break;
+            }
+            case '*': {
+                result = num1 * num2;
+                break;
+            }
+            case '/': {
+                if (num2 != 0) {
+                    result = num1 / num2;
+                } else {
+                    throw new ArithmeticException("나눗셈 연산에서 분모에 0이 입력될 수 없습니다");
+                }
+                break;
+            }
+            default:
+                throw new UnsupportedOperationException("올바른 입력이 아닙니다");
+
         }
-
         return result;
 
+    }
 
-    }
-    public double getResult() {
-        return result;
-    }
-    public void setResult(double result) {
-        this.result = result;
-    }
+
 }
+
