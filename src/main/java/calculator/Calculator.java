@@ -2,11 +2,18 @@ package calculator;
 
 import javax.naming.OperationNotSupportedException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Calculator {
     Scanner sc = new Scanner(System.in);
-    private ArrayList<Integer> arr = new ArrayList<>();
+    private List<Integer> arr ;
+
+    public Calculator() {}
+
+    public Calculator(List<Integer> arr){
+        this.arr = arr;
+    }
 
 
     public int calculate(int num1, int num2, Character operator) {
@@ -43,7 +50,7 @@ public class Calculator {
 
     }
     public ArrayList<Integer> getArr() {
-        return arr;
+        return (ArrayList<Integer>) arr;
     }
 
     public void setArr(ArrayList<Integer> arr) {
