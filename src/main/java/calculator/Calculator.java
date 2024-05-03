@@ -6,7 +6,15 @@ import java.util.Scanner;
 
 public class Calculator {
     Scanner sc = new Scanner(System.in);
-    ArrayList<Integer> arr = new ArrayList<>();
+    private ArrayList<Integer> arr = new ArrayList<>();
+
+    public ArrayList<Integer> getArr() {
+        return arr;
+    }
+
+    public void setArr(ArrayList<Integer> arr) {
+        this.arr = arr;
+    }
 
     public int calculate(int num1, int num2, Character operator) {
 
