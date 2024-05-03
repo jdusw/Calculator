@@ -6,13 +6,16 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Calculator {
+    private static final double PI = 3.14;
     Scanner sc = new Scanner(System.in);
     private List<Integer> arr ;
+    private List<Double> crcleResult;
 
     public Calculator() {}
 
-    public Calculator(List<Integer> arr){
+    public Calculator(List<Integer> arr, List<Double> crcleResult){
         this.arr = arr;
+        this.crcleResult = crcleResult;
     }
 
 
@@ -49,6 +52,9 @@ public class Calculator {
         return result;
 
     }
+    public double calculateCircleArea(int redius){
+        return PI * redius * redius;
+    }
     public ArrayList<Integer> getArr() {
         return (ArrayList<Integer>) arr;
     }
@@ -56,6 +62,15 @@ public class Calculator {
     public void setArr(ArrayList<Integer> arr) {
         this.arr = arr;
     }
+
+    public List<Double> getCrcleResult() {
+        return crcleResult;
+    }
+
+    public void setCrcleResult(List<Double> crcleResult) {
+        this.crcleResult = crcleResult;
+    }
+
     public void removeResult(int index) {
         this.arr.remove(index);
     }
@@ -66,5 +81,10 @@ public class Calculator {
     }
 
 
+    public void inquiryCircleResult() {
+        for(Double crcleResults : crcleResult) {
+            System.out.println("원의 넓이 :" + crcleResults);
+        }
+    }
 }
 
