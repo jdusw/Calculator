@@ -8,7 +8,7 @@ public class Calculator {
     Scanner sc = new Scanner(System.in);
     ArrayList<Integer> arr = new ArrayList<>();
 
-    public double calculate(int num1, int num2, Character operator) {
+    public int calculate(int num1, int num2, Character operator) {
 
         int result = 0;
 
