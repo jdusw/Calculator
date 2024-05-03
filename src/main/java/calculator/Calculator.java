@@ -52,7 +52,11 @@ public class Calculator {
     public void removeResult(int index) {
         this.arr.remove(index);
     }
-
+    public void inquiryResults() {
+        for(Integer num : arr) {
+            System.out.println("연산결과 = " + num);
+        }
+    }
 
 
 }
